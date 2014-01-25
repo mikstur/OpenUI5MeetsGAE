@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>OpenUI5 On Google App Engine</title>
+
+	<script id="sap-ui-bootstrap"
+			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-libs="sap.ui.commons, sap.m"></script>
+
+	<script>
+		// Application Content...
+		sap.ui.localResources("js");
+		
+		// Register Module Paths
+		jQuery.sap.registerModulePath("Application", "Application");
+		jQuery.sap.registerModulePath("Endpoint", "Endpoint");
+	</script>
+
+	<script type="text/javascript">
+		var initializeGapi = function() {
+			// Launch Application...
+			jQuery.sap.require("Application");
+			var oApp = new Application({ root: "content" });
+		}
+	</script>
+	<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=initializeGapi"></script>
+</head>
+<body class="sapUiBody">
+	<div id="content"></div>
+</body>
+</html>

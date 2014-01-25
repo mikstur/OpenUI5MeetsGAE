@@ -1,0 +1,299 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "employeeendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "com.mvk",
+  "ownerName" : "com.mvk",
+  "methods" : {
+    "employeeendpoint.insertEmployee" : {
+      "path" : "employee/{firstName}/{lastName}/{phoneNumber}/{cellNumber}/{email}/{idNumber}/{country}/{city}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.mvk.openui5.EmployeeEndpoint.insertEmployee",
+      "request" : {
+        "parameters" : {
+          "firstName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "lastName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "phoneNumber" : {
+            "type" : "string",
+            "required" : true
+          },
+          "cellNumber" : {
+            "type" : "string",
+            "required" : true
+          },
+          "email" : {
+            "type" : "string",
+            "required" : true
+          },
+          "idNumber" : {
+            "type" : "string",
+            "required" : true
+          },
+          "country" : {
+            "type" : "string",
+            "required" : true
+          },
+          "city" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "employeeendpoint.removeEmployee" : {
+      "path" : "employee/{email}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.mvk.openui5.EmployeeEndpoint.removeEmployee",
+      "request" : {
+        "parameters" : {
+          "email" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "employeeendpoint.updateEmployee" : {
+      "path" : "employee/{firstName}/{lastName}/{phoneNumber}/{cellNumber}/{email}/{idNumber}/{country}/{city}",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.mvk.openui5.EmployeeEndpoint.updateEmployee",
+      "request" : {
+        "parameters" : {
+          "firstName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "lastName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "phoneNumber" : {
+            "type" : "string",
+            "required" : true
+          },
+          "cellNumber" : {
+            "type" : "string",
+            "required" : true
+          },
+          "email" : {
+            "type" : "string",
+            "required" : true
+          },
+          "idNumber" : {
+            "type" : "string",
+            "required" : true
+          },
+          "country" : {
+            "type" : "string",
+            "required" : true
+          },
+          "city" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "employeeendpoint.listEmployee" : {
+      "path" : "employee",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.mvk.openui5.EmployeeEndpoint.listEmployee",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "employeeendpoint.getEmployee" : {
+      "path" : "employee/{email}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.mvk.openui5.EmployeeEndpoint.getEmployee",
+      "request" : {
+        "parameters" : {
+          "email" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Employee" : {
+        "id" : "Employee",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "$ref" : "Key"
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "type" : "string"
+          },
+          "cellNumber" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "idNumber" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Key" : {
+        "id" : "Key",
+        "type" : "object",
+        "properties" : {
+          "kind" : {
+            "type" : "string"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "namespace" : {
+            "type" : "string"
+          },
+          "complete" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "CollectionResponse_Employee" : {
+        "id" : "CollectionResponse_Employee",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Employee"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.mvk.openui5.EmployeeEndpoint.insertEmployee" : {
+        "response" : {
+          "$ref" : "Employee"
+        }
+      },
+      "com.mvk.openui5.EmployeeEndpoint.removeEmployee" : {
+      },
+      "com.mvk.openui5.EmployeeEndpoint.updateEmployee" : {
+        "response" : {
+          "$ref" : "Employee"
+        }
+      },
+      "com.mvk.openui5.EmployeeEndpoint.listEmployee" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Employee"
+        }
+      },
+      "com.mvk.openui5.EmployeeEndpoint.getEmployee" : {
+        "response" : {
+          "$ref" : "Employee"
+        }
+      }
+    }
+  }
+}
